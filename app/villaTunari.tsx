@@ -74,7 +74,7 @@ const villaTunari = () => {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ir</Text>
+            <Text style={styles.goButtonText}>Ubicacion</Text>
           </TouchableOpacity>
         </View>
       </View>

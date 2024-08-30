@@ -103,50 +103,140 @@ export default function HomeScreen() {
         {/* desde aqui comienza los cards */}
         <View>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <Link href="/villaTunari" asChild>
-              <TouchableOpacity>
-                <View style={styles.item}>
-                  <Image
-                    source={{
-                      uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                    }}
-                    style={styles.image}
-                  />
-                  <Text
-                    style={styles.itemTxt}
-                    numberOfLines={1}
-                    ellipsizeMode="tail"
-                  >
-                    Villa Tunari
-                  </Text>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      gap: 50,
-                      justifyContent: "space-between",
-                      paddingLeft: 20,
-                      paddingRight: 20,
-                      paddingBottom: 10,
-                      paddingTop: 10,
-                    }}
-                  >
-                    <View
-                      style={{ flexDirection: "row", alignItems: "center" }}
-                    >
-                      <FontAwesome5
-                        name="map-marker-alt"
-                        size={24}
-                        color={Colors.primaryColor}
-                      />
-                      <Text style={styles.itemLocationTxt}>
-                        Carretera a Chapare
-                      </Text>
-                    </View>
-                    <FontAwesome5 name="heart" size={24} />
+            <View style={styles.cards}>
+              {/* villa tunari */}
+              <View style={styles.item}>
+                <Link href="/villaTunari" asChild>
+                  <TouchableOpacity>
+                    <Image
+                      source={{
+                        uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
+                      }}
+                      style={styles.image}
+                    />
+                  </TouchableOpacity>
+                </Link>
+
+                <Text
+                  style={styles.itemTxt}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  Villa Tunari
+                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    gap: 50,
+                    justifyContent: "space-between",
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    paddingBottom: 10,
+                    paddingTop: 10,
+                  }}
+                >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocationTxt}>
+                      Carretera a Chapare
+                    </Text>
                   </View>
+                  <FontAwesome5 name="heart" size={24} />
                 </View>
-              </TouchableOpacity>
-            </Link>
+              </View>
+              {/* arani */}
+              <View style={styles.item}>
+                <Link href="/villaTunari" asChild>
+                  <TouchableOpacity>
+                    <Image
+                      source={{
+                        uri: "https://www.gamarani.com/site/files/2020/10/website-arani-datos-generales-ubicacion.jpg",
+                      }}
+                      style={styles.image}
+                    />
+                  </TouchableOpacity>
+                </Link>
+
+                <Text
+                  style={styles.itemTxt}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  Arani
+                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    gap: 50,
+                    justifyContent: "space-between",
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    paddingBottom: 10,
+                    paddingTop: 10,
+                  }}
+                >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocationTxt}>
+                      Arani, Valle Alto
+                    </Text>
+                  </View>
+                  <FontAwesome5 name="heart" size={24} />
+                </View>
+              </View>
+              {/* totora */}
+              <View style={styles.item}>
+                <Link href="/villaTunari" asChild>
+                  <TouchableOpacity>
+                    <Image
+                      source={{
+                        uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
+                      }}
+                      style={styles.image}
+                    />
+                  </TouchableOpacity>
+                </Link>
+
+                <Text
+                  style={styles.itemTxt}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  Villa Tunari
+                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    gap: 50,
+                    justifyContent: "space-between",
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    paddingBottom: 10,
+                    paddingTop: 10,
+                  }}
+                >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocationTxt}>
+                      Carretera a Chapare
+                    </Text>
+                  </View>
+                  <FontAwesome5 name="heart" size={24} />
+                </View>
+              </View>
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -178,7 +268,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     padding: 10,
     borderRadius: 10,
-    marginBottom: 20,
     width: 320,
   },
   image: {
@@ -197,5 +286,10 @@ const styles = StyleSheet.create({
   itemLocationTxt: {
     fontSize: 16,
     marginLeft: 10,
+  },
+  cards: {
+    flex: 1,
+    gap: 30,
+    paddingBottom: 100,
   },
 });
