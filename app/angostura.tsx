@@ -60,16 +60,16 @@ const angostura = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Jardín Botánico Martín Cárdenas</Text>
+        <Text style={styles.title}>Parque Ecológico de la Angostura</Text>
         <Image
           source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Palmeras_en_el_Jard%C3%ADn_Bot%C3%A1nico_Mart%C3%ADn_C%C3%A1rdenas_de_Cochabamba.jpg/1200px-Palmeras_en_el_Jard%C3%ADn_Bot%C3%A1nico_Mart%C3%ADn_C%C3%A1rdenas_de_Cochabamba.jpg",
+            uri: "https://upload.wikimedia.org/wikipedia/commons/3/33/Laguna_Angostura_near_Cochabamba%2C_Bolivia.jpg",
           }}
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          Un jardín botánico que alberga una gran variedad de especies de
-          plantas nativas y exóticas.
+          Un área protegida que ofrece actividades al aire libre como caminatas,
+          observación de aves y paseos en bote.
         </Text>
 
         <View style={styles.buttonContainer}>
