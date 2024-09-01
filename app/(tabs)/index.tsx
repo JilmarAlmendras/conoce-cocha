@@ -5,16 +5,23 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  TextInput,
 } from "react-native";
-
+import { useState } from "react";
 import { useHeaderHeight } from "@react-navigation/elements";
-
 import { Link, Stack } from "expo-router";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
+import { useLugar } from "../LugarProvider";
 
 export default function HomeScreen() {
   const headerHeight = useHeaderHeight();
+  const { lugares, filterLugarByName, addToFavorite } = useLugar();
+
+  const [searchText, setSearchText] = useState("");
+
+  const filteredData =
+    searchText.length > 0 ? lugares.filter((item) => item.filtrado) : lugares;
 
   return (
     <>
@@ -29,6 +36,9 @@ export default function HomeScreen() {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                justifyContent: "center",
+                paddingTop: 20,
+                width: "100%",
               }}
             >
               <Image
@@ -47,27 +57,28 @@ export default function HomeScreen() {
               </Text>
             </View>
           ),
-          headerRight: () => (
-            <TouchableOpacity
-              onPress={() => {}}
-              style={{
-                marginRight: 20,
-                backgroundColor: Colors.white,
-                padding: 10,
-                borderRadius: 10,
-                shadowColor: "#171717",
-                shadowOffset: { width: 2, height: 4 },
-                shadowOpacity: 0.2,
-                shadowRadius: 3,
-              }}
-            >
-              <Ionicons name="search" size={24} color={Colors.black} />
-            </TouchableOpacity>
-          ),
         }}
       />
       <View style={[styles.container, { paddingTop: headerHeight }]}>
-        {/* desde aqui comienza los botonoes de las categorias */}
+        {/* Campo de búsqueda */}
+        <TextInput
+          value={searchText}
+          onChangeText={(text) => {
+            setSearchText(text);
+            filterLugarByName(text);
+          }}
+          placeholder="Buscar..."
+          style={{
+            borderColor: Colors.black,
+            borderWidth: 1,
+            borderRadius: 10,
+            padding: 10,
+            marginBottom: 10,
+            backgroundColor: Colors.white,
+          }}
+        />
+
+        {/* Botones de las categorías */}
         <View>
           <ScrollView
             showsHorizontalScrollIndicator={false}
@@ -80,49 +91,57 @@ export default function HomeScreen() {
           >
             <View style={styles.containerBtn}>
               <TouchableOpacity>
-                <Text style={styles.categoryBtn}>Pueblitos</Text>
+                <Text style={styles.categoryBtnActive}>Todo</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.categoryBtn}>Iglesias</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.categoryBtn}>Museos</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.categoryBtn}>Monumentos</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.categoryBtn}>Plazas</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.categoryBtn}>Areas verdes</Text>
-              </TouchableOpacity>
+              <Link href="/pueblos" asChild>
+                <TouchableOpacity>
+                  <Text style={styles.categoryBtn}>Pueblos</Text>
+                </TouchableOpacity>
+              </Link>
+              <Link href="/iglesias" asChild>
+                <TouchableOpacity>
+                  <Text style={styles.categoryBtn}>Iglesias</Text>
+                </TouchableOpacity>
+              </Link>
+              <Link href="/museos" asChild>
+                <TouchableOpacity>
+                  <Text style={styles.categoryBtn}>Museos</Text>
+                </TouchableOpacity>
+              </Link>
+              <Link href="/monumentos" asChild>
+                <TouchableOpacity>
+                  <Text style={styles.categoryBtn}>Monumentos</Text>
+                </TouchableOpacity>
+              </Link>
+              <Link href="/plazas" asChild>
+                <TouchableOpacity>
+                  <Text style={styles.categoryBtn}>Plazas</Text>
+                </TouchableOpacity>
+              </Link>
+              <Link href="/verdes" asChild>
+                <TouchableOpacity>
+                  <Text style={styles.categoryBtn}>Áreas verdes</Text>
+                </TouchableOpacity>
+              </Link>
             </View>
           </ScrollView>
         </View>
-        {/* desde aqui comienza los cards */}
-        <View>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.cards}>
-              {/* villa tunari */}
-              <View style={styles.item}>
-                <Link href="/villaTunari" asChild>
+        {/* Lista filtrada de cards */}
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.cards}>
+            {filteredData.map((item, index) => (
+              <View style={styles.item} key={index}>
+                <Link href={item.ruta as any} asChild>
                   <TouchableOpacity>
-                    <Image
-                      source={{
-                        uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                      }}
-                      style={styles.image}
-                    />
+                    <Image source={{ uri: item.image }} style={styles.image} />
                   </TouchableOpacity>
                 </Link>
-
                 <Text
                   style={styles.itemTxt}
                   numberOfLines={1}
                   ellipsizeMode="tail"
                 >
-                  Villa Tunari
+                  {item.name}
                 </Text>
                 <View
                   style={{
@@ -141,104 +160,24 @@ export default function HomeScreen() {
                       size={24}
                       color={Colors.primaryColor}
                     />
-                    <Text style={styles.itemLocationTxt}>
-                      Carretera a Chapare
-                    </Text>
+                    <Text style={styles.itemLocationTxt}>{item.location}</Text>
                   </View>
-                  <FontAwesome5 name="heart" size={24} />
-                </View>
-              </View>
-              {/* arani */}
-              <View style={styles.item}>
-                <Link href="/villaTunari" asChild>
-                  <TouchableOpacity>
-                    <Image
-                      source={{
-                        uri: "https://www.gamarani.com/site/files/2020/10/website-arani-datos-generales-ubicacion.jpg",
-                      }}
-                      style={styles.image}
-                    />
+                  <TouchableOpacity
+                    onPress={() => {
+                      addToFavorite(item.id);
+                    }}
+                  >
+                    {item.favorito ? (
+                      <FontAwesome5 color="red" name="gratipay" size={24} />
+                    ) : (
+                      <FontAwesome5 name="heart" size={24} />
+                    )}
                   </TouchableOpacity>
-                </Link>
-
-                <Text
-                  style={styles.itemTxt}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                >
-                  Arani
-                </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    gap: 50,
-                    justifyContent: "space-between",
-                    paddingLeft: 20,
-                    paddingRight: 20,
-                    paddingBottom: 10,
-                    paddingTop: 10,
-                  }}
-                >
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <FontAwesome5
-                      name="map-marker-alt"
-                      size={24}
-                      color={Colors.primaryColor}
-                    />
-                    <Text style={styles.itemLocationTxt}>
-                      Arani, Valle Alto
-                    </Text>
-                  </View>
-                  <FontAwesome5 name="heart" size={24} />
                 </View>
               </View>
-              {/* totora */}
-              <View style={styles.item}>
-                <Link href="/villaTunari" asChild>
-                  <TouchableOpacity>
-                    <Image
-                      source={{
-                        uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                      }}
-                      style={styles.image}
-                    />
-                  </TouchableOpacity>
-                </Link>
-
-                <Text
-                  style={styles.itemTxt}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                >
-                  Villa Tunari
-                </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    gap: 50,
-                    justifyContent: "space-between",
-                    paddingLeft: 20,
-                    paddingRight: 20,
-                    paddingBottom: 10,
-                    paddingTop: 10,
-                  }}
-                >
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <FontAwesome5
-                      name="map-marker-alt"
-                      size={24}
-                      color={Colors.primaryColor}
-                    />
-                    <Text style={styles.itemLocationTxt}>
-                      Carretera a Chapare
-                    </Text>
-                  </View>
-                  <FontAwesome5 name="heart" size={24} />
-                </View>
-              </View>
-            </View>
-          </ScrollView>
-        </View>
+            ))}
+          </View>
+        </ScrollView>
       </View>
     </>
   );
@@ -263,6 +202,19 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 3,
+  },
+  categoryBtnActive: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colors.primaryColor,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 10,
+    shadowColor: "#333333",
+    shadowOffset: { width: 1, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    color: Colors.white,
   },
   item: {
     backgroundColor: Colors.white,
@@ -290,6 +242,6 @@ const styles = StyleSheet.create({
   cards: {
     flex: 1,
     gap: 30,
-    paddingBottom: 100,
+    paddingBottom: 20,
   },
 });

@@ -23,7 +23,9 @@ const Page = () => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                justifyContent: "center",
                 paddingTop: 20,
+                width: "100%",
               }}
             >
               <Image
