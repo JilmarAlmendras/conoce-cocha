@@ -8,12 +8,15 @@ import {
 } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
-import { Feather, FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { Feather, FontAwesome5 } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Link, router, Stack } from "expo-router";
+import { useLugar } from "./LugarProvider";
 
 const pueblos = () => {
   const headerHeight = useHeaderHeight();
+  const { lugares, addToFavorite } = useLugar();
+  const pueblos = lugares.filter((item) => item.categories.includes("pueblos"));
 
   return (
     <>
@@ -67,136 +70,53 @@ const pueblos = () => {
         {/* desde aqui comienza los cards */}
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.cards}>
-            {/* villa tunari */}
-            <View style={styles.item}>
-              <Link href="/villaTunari" asChild>
-                <TouchableOpacity>
-                  <Image
-                    source={{
-                      uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
+            {pueblos.map((item, index) => (
+              <View style={styles.item} key={index}>
+                <Link href={item.ruta as any} asChild>
+                  <TouchableOpacity>
+                    <Image source={{ uri: item.image }} style={styles.image} />
+                  </TouchableOpacity>
+                </Link>
+                <Text
+                  style={styles.itemTxt}
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {item.name}
+                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    gap: 50,
+                    justifyContent: "space-between",
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    paddingBottom: 10,
+                    paddingTop: 10,
+                  }}
+                >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocationTxt}>{item.location}</Text>
+                  </View>
+                  <TouchableOpacity
+                    onPress={() => {
+                      addToFavorite(item.id);
                     }}
-                    style={styles.image}
-                  />
-                </TouchableOpacity>
-              </Link>
-
-              <Text
-                style={styles.itemTxt}
-                numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                Villa Tunari
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  gap: 50,
-                  justifyContent: "space-between",
-                  paddingLeft: 20,
-                  paddingRight: 20,
-                  paddingBottom: 10,
-                  paddingTop: 10,
-                }}
-              >
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocationTxt}>
-                    Carretera a Chapare
-                  </Text>
+                  >
+                    {item.favorito ? (
+                      <FontAwesome5 color="red" name="gratipay" size={24} />
+                    ) : (
+                      <FontAwesome5 name="heart" size={24} />
+                    )}
+                  </TouchableOpacity>
                 </View>
-                <FontAwesome5 name="heart" size={24} />
               </View>
-            </View>
-            {/* arani */}
-            <View style={styles.item}>
-              <Link href="/villaTunari" asChild>
-                <TouchableOpacity>
-                  <Image
-                    source={{
-                      uri: "https://www.gamarani.com/site/files/2020/10/website-arani-datos-generales-ubicacion.jpg",
-                    }}
-                    style={styles.image}
-                  />
-                </TouchableOpacity>
-              </Link>
-
-              <Text
-                style={styles.itemTxt}
-                numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                Arani
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  gap: 50,
-                  justifyContent: "space-between",
-                  paddingLeft: 20,
-                  paddingRight: 20,
-                  paddingBottom: 10,
-                  paddingTop: 10,
-                }}
-              >
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocationTxt}>Arani, Valle Alto</Text>
-                </View>
-                <FontAwesome5 name="heart" size={24} />
-              </View>
-            </View>
-            {/* totora */}
-            <View style={styles.item}>
-              <Link href="/villaTunari" asChild>
-                <TouchableOpacity>
-                  <Image
-                    source={{
-                      uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                    }}
-                    style={styles.image}
-                  />
-                </TouchableOpacity>
-              </Link>
-
-              <Text
-                style={styles.itemTxt}
-                numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                Villa Tunari
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  gap: 50,
-                  justifyContent: "space-between",
-                  paddingLeft: 20,
-                  paddingRight: 20,
-                  paddingBottom: 10,
-                  paddingTop: 10,
-                }}
-              >
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocationTxt}>
-                    Carretera a Chapare
-                  </Text>
-                </View>
-                <FontAwesome5 name="heart" size={24} />
-              </View>
-            </View>
+            ))}
           </View>
         </ScrollView>
       </View>

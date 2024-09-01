@@ -60,14 +60,14 @@ const agenda = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.cards}>
             <View style={styles.item}>
-              <TouchableOpacity>
+              <View style={{ paddingTop: 10 }}>
                 <Image
                   source={{
                     uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
                   }}
                   style={styles.image}
                 />
-              </TouchableOpacity>
+              </View>
               <View style={{ flexDirection: "column" }}>
                 <View style={{ padding: 8 }}>
                   <Text
@@ -80,243 +80,6 @@ const agenda = () => {
                     Obra "Porque a mi?"
                   </Text>
                   <Text>15 de agosto - 15:30</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: 8,
-                  }}
-                >
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={{ width: 100 }}>Teatro Adela Zamudio</Text>
-                  <TouchableOpacity
-                    style={styles.goButton}
-                    onPress={handlePress}
-                  >
-                    <Text style={{ color: Colors.white }}>Ir</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-          {/* otro */}
-          <View style={styles.cards}>
-            <View style={styles.item}>
-              <TouchableOpacity>
-                <Image
-                  source={{
-                    uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                  }}
-                  style={styles.image}
-                />
-              </TouchableOpacity>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ padding: 8 }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "600",
-                      paddingBottom: 8,
-                    }}
-                  >
-                    Obra "Porque a mi?"
-                  </Text>
-                  <Text>15 de agosto 15:30</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: 8,
-                  }}
-                >
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={{ width: 100 }}>Teatro Adela Zamudio</Text>
-                  <TouchableOpacity
-                    style={styles.goButton}
-                    onPress={handlePress}
-                  >
-                    <Text style={{ color: Colors.white }}>Ir</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-          {/* aqui */}
-          <View style={styles.cards}>
-            <View style={styles.item}>
-              <TouchableOpacity>
-                <Image
-                  source={{
-                    uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                  }}
-                  style={styles.image}
-                />
-              </TouchableOpacity>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ padding: 8 }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "600",
-                      paddingBottom: 8,
-                    }}
-                  >
-                    Obra "Porque a mi?"
-                  </Text>
-                  <Text>15 de agosto 15:30</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: 8,
-                  }}
-                >
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={{ width: 100 }}>Teatro Adela Zamudio</Text>
-                  <TouchableOpacity
-                    style={styles.goButton}
-                    onPress={handlePress}
-                  >
-                    <Text style={{ color: Colors.white }}>Ir</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View style={styles.cards}>
-            <View style={styles.item}>
-              <TouchableOpacity>
-                <Image
-                  source={{
-                    uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                  }}
-                  style={styles.image}
-                />
-              </TouchableOpacity>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ padding: 8 }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "600",
-                      paddingBottom: 8,
-                    }}
-                  >
-                    Obra "Porque a mi?"
-                  </Text>
-                  <Text>15 de agosto 15:30</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: 8,
-                  }}
-                >
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={{ width: 100 }}>Teatro Adela Zamudio</Text>
-                  <TouchableOpacity
-                    style={styles.goButton}
-                    onPress={handlePress}
-                  >
-                    <Text style={{ color: Colors.white }}>Ir</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View style={styles.cards}>
-            <View style={styles.item}>
-              <TouchableOpacity>
-                <Image
-                  source={{
-                    uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                  }}
-                  style={styles.image}
-                />
-              </TouchableOpacity>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ padding: 8 }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "600",
-                      paddingBottom: 8,
-                    }}
-                  >
-                    Obra "Porque a mi?"
-                  </Text>
-                  <Text>15 de agosto 15:30</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: 8,
-                  }}
-                >
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={{ width: 100 }}>Teatro Adela Zamudio</Text>
-                  <TouchableOpacity
-                    style={styles.goButton}
-                    onPress={handlePress}
-                  >
-                    <Text style={{ color: Colors.white }}>Ir</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View style={styles.cards}>
-            <View style={styles.item}>
-              <TouchableOpacity>
-                <Image
-                  source={{
-                    uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
-                  }}
-                  style={styles.image}
-                />
-              </TouchableOpacity>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ padding: 8 }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "600",
-                      paddingBottom: 8,
-                    }}
-                  >
-                    Obra "Porque a mi?"
-                  </Text>
-                  <Text>15 de agosto 15:30</Text>
                 </View>
                 <View
                   style={{
@@ -383,8 +146,8 @@ const styles = StyleSheet.create({
   goButton: {
     backgroundColor: Colors.primaryColor,
     borderRadius: 12,
-    padding: 6,
-    width: "20%",
+    padding: 8,
+    width: "25%",
     justifyContent: "center",
     alignItems: "center",
   },

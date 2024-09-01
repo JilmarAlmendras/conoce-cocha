@@ -33,8 +33,8 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
       favorito: false,
-      ruta: "/villaTunari",
-      categories: ["turismo", "naturaleza"],
+      ruta: "/cristo",
+      categories: ["monumentos"],
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
         "https://www.gamarani.com/site/files/2020/10/website-arani-datos-generales-ubicacion.jpg",
       favorito: false,
       ruta: "/arani",
-      categories: ["turismo", "naturaleza"],
+      categories: ["verdes"],
     },
     {
       id: 3,
@@ -53,8 +53,8 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
       favorito: false,
-      ruta: "/totora",
-      categories: ["turismo", "naturaleza"],
+      ruta: "/lincoln",
+      categories: ["plazas"],
     },
   ]);
 
