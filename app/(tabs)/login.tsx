@@ -75,15 +75,6 @@ const LoginPage = () => {
             <Text style={styles.title}>Bienvenido</Text>
             <Text style={styles.mainTitle}>CONOCE COCHA</Text>
 
-            <TouchableOpacity style={styles.favoriteButton}>
-              <Link href="/likes">
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <Ionicons name="heart" size={20} color="#FF0000" />
-                  <Text style={styles.favoriteButtonText}>Ver Favoritos</Text>
-                </View>
-              </Link>
-            </TouchableOpacity>
-
             <TouchableOpacity
               onPress={() =>
                 auth.signOut().then(() => {
