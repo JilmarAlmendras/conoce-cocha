@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
   Alert,
+  Dimensions,
 } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
@@ -15,6 +16,8 @@ import { useHeaderHeight } from "@react-navigation/elements";
 import { useLugar } from "./LugarProvider";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/firebaseConfig";
+
+const { width } = Dimensions.get("window");
 
 const iglesias = () => {
   const headerHeight = useHeaderHeight();
@@ -90,18 +93,8 @@ const iglesias = () => {
                 >
                   {item.name}
                 </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    gap: 50,
-                    justifyContent: "space-between",
-                    paddingLeft: 20,
-                    paddingRight: 20,
-                    paddingBottom: 10,
-                    paddingTop: 10,
-                  }}
-                >
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <View style={styles.itemFooter}>
+                  <View style={styles.itemLocation}>
                     <FontAwesome5
                       name="map-marker-alt"
                       size={24}
@@ -168,11 +161,12 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     padding: 10,
     borderRadius: 10,
-    width: 320,
+    width: width * 0.9,
+    alignSelf: "center",
   },
   image: {
-    width: 300,
-    height: 300,
+    width: "100%",
+    height: width * 0.9,
     borderRadius: 10,
   },
   itemTxt: {
@@ -186,6 +180,18 @@ const styles = StyleSheet.create({
   itemLocationTxt: {
     fontSize: 16,
     marginLeft: 10,
+  },
+  itemFooter: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  itemLocation: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   cards: {
     flex: 1,
