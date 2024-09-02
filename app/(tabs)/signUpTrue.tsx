@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Link, router, Stack } from "expo-router";
-import {} from "./(tabs)/login";
+import {} from "./login";
 import { auth } from "@/config/firebaseConfig";
 
 const signUpTrue = () => {
@@ -25,8 +25,12 @@ const signUpTrue = () => {
         <Text style={styles.mainTitle}>CONOCE COCHA</Text>
 
         <TouchableOpacity style={styles.favoriteButton}>
-          <Ionicons name="heart" size={20} color="#FF0000" />
-          <Text style={styles.favoriteButtonText}>Ver Favoritos</Text>
+          <Link href="/likes">
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons name="heart" size={20} color="#FF0000" />
+              <Text style={styles.favoriteButtonText}>Ver Favoritos</Text>
+            </View>
+          </Link>
         </TouchableOpacity>
 
         <TouchableOpacity

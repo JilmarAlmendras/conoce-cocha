@@ -66,6 +66,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="signUpTrue"
+        options={{
+          tabBarButton: () => null,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person" size={28} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
