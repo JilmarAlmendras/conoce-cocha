@@ -65,12 +65,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -101,12 +105,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -137,12 +145,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -173,12 +185,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -209,12 +225,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -245,12 +265,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -281,12 +305,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -317,12 +345,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -353,12 +385,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -389,12 +425,16 @@ const agenda = () => {
                   </Text>
                 </View>
                 <View style={styles.itemFooter}>
-                  <FontAwesome5
-                    name="map-marker-alt"
-                    size={24}
-                    color={Colors.primaryColor}
-                  />
-                  <Text style={styles.itemLocation}>Plaza de las Banderas</Text>
+                  <View style={{ flexDirection: "row", gap: 10 }}>
+                    <FontAwesome5
+                      name="map-marker-alt"
+                      size={24}
+                      color={Colors.primaryColor}
+                    />
+                    <Text style={styles.itemLocation}>
+                      Plaza de las Banderas
+                    </Text>
+                  </View>
                   <TouchableOpacity
                     style={styles.goButton}
                     onPress={() =>
@@ -485,7 +525,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     padding: 8,
-    gap: 10,
+    justifyContent: "space-between",
   },
   itemLocation: {
     width: 100,
