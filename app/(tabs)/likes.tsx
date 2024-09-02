@@ -5,13 +5,15 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  Dimensions,
 } from "react-native";
-import { useEffect, useState } from "react";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Link, Stack } from "expo-router";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { useLugar } from "../LugarProvider";
+
+const { width } = Dimensions.get("window");
 
 const likes = () => {
   const headerHeight = useHeaderHeight();
@@ -24,31 +26,14 @@ const likes = () => {
           headerTransparent: true,
           headerTitle: "",
           headerLeft: () => (
-            <View
-              style={{
-                marginLeft: 20,
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                paddingTop: 20,
-                width: "100%",
-              }}
-            >
+            <View style={styles.headerLeft}>
               <Image
                 source={{
                   uri: "https://www.myiconstory.com/wp-content/uploads/2018/06/Cochabamba-Cristo-de-la-concordia.png",
                 }}
-                style={{ width: 64, height: 64 }}
+                style={styles.headerImage}
               />
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                }}
-              >
-                CONOCE COCHA
-              </Text>
+              <Text style={styles.headerText}>CONOCE COCHA</Text>
             </View>
           ),
         }}
@@ -76,20 +61,8 @@ const likes = () => {
                   >
                     {item.name}
                   </Text>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      gap: 50,
-                      justifyContent: "space-between",
-                      paddingLeft: 20,
-                      paddingRight: 20,
-                      paddingBottom: 10,
-                      paddingTop: 10,
-                    }}
-                  >
-                    <View
-                      style={{ flexDirection: "row", alignItems: "center" }}
-                    >
+                  <View style={styles.itemFooter}>
+                    <View style={styles.itemLocation}>
                       <FontAwesome5
                         name="map-marker-alt"
                         size={24}
@@ -133,43 +106,44 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 20,
   },
-  containerBtn: {
-    flexDirection: "row",
-    gap: 10,
-  },
-  categoryBtn: {
-    backgroundColor: Colors.white,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 10,
-    shadowColor: "#333333",
-    shadowOffset: { width: 1, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-  },
-  categoryBtnActive: {
+  headerLeft: {
+    marginLeft: 20,
+    display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.primaryColor,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 10,
-    shadowColor: "#333333",
-    shadowOffset: { width: 1, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    color: Colors.white,
+    justifyContent: "center",
+    paddingTop: 20,
+    width: "100%",
+  },
+  headerImage: {
+    width: 64,
+    height: 64,
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  title: {
+    padding: 20,
+    textAlign: "center",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  cards: {
+    flex: 1,
+    gap: 30,
+    paddingBottom: 20,
   },
   item: {
     backgroundColor: Colors.white,
     padding: 10,
     borderRadius: 10,
-    width: 320,
-    paddingBottom: 20,
+    width: width * 0.9,
+    alignSelf: "center",
   },
   image: {
-    width: 300,
-    height: 300,
+    width: "100%",
+    height: width * 0.9,
     borderRadius: 10,
   },
   itemTxt: {
@@ -180,19 +154,20 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingLeft: 10,
   },
+  itemFooter: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  itemLocation: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   itemLocationTxt: {
     fontSize: 16,
     marginLeft: 10,
-  },
-  cards: {
-    flex: 1,
-    gap: 30,
-    paddingBottom: 20,
-  },
-  title: {
-    padding: 20,
-    textAlign: "center",
-    fontSize: 24,
-    fontWeight: "bold",
   },
 });
