@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const villaroel = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/EaCfZ8farhFJ9pFx6");
+    Linking.openURL("https://maps.app.goo.gl/xmESDVcMP6noGP3j7");
   };
 
   const router = useRouter();

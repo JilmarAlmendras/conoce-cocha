@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const abaroa = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/EaCfZ8farhFJ9pFx6");
+    Linking.openURL("https://maps.app.goo.gl/eCpCk6BftmZ35e8X7");
   };
 
   const router = useRouter();
@@ -68,8 +68,13 @@ const abaroa = () => {
           style={styles.mainImage}
         />
         <Text style={styles.description}>
+        Tras el estallido de la guerra del Pacífico en 1879, que enfrentó a los países 
+        aliados de Bolivia y Perú contra Chile, se incorporó voluntariamente a las tropas bolivianas.
+         Durante la invasión u ocupación chilena, 
+        lideró la resistencia civil en la batalla de Topáter, donde falleció. 
           Este monumento está dedicado al héroe de la Guerra del Pacífico,
           Eduardo Abaroa, conocido por su defensa en la Batalla de Topáter.
+
         </Text>
 
         <View style={styles.buttonContainer}>
