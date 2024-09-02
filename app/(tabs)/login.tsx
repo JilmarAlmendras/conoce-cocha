@@ -12,6 +12,7 @@ import { Link, Stack, useRouter } from "expo-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebaseConfig";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { useHeaderHeight } from "@react-navigation/elements";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ const LoginPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const router = useRouter();
   const isLoged = Boolean(auth.currentUser);
+  const headerHeight = useHeaderHeight();
 
   const handleLogin = async () => {
     setLoading(true);
@@ -55,77 +57,82 @@ const LoginPage = () => {
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          headerTransparent: true,
-          headerTitle: "",
-          headerLeft: () => (
-            <View
-              style={{
-                marginLeft: 20,
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                paddingTop: 20,
-                width: "100%",
+      {isLoged ? (
+        <>
+          <Stack.Screen
+            options={{
+              headerTransparent: true,
+              headerTitle: "",
+            }}
+          />
+          <View style={styles.container}>
+            <Image
+              source={{
+                uri: "https://www.myiconstory.com/wp-content/uploads/2018/06/Cochabamba-Cristo-de-la-concordia.png",
               }}
+              style={styles.mainImage}
+            />
+            <Text style={styles.title}>Bienvenido</Text>
+            <Text style={styles.mainTitle}>CONOCE COCHA</Text>
+
+            <TouchableOpacity style={styles.favoriteButton}>
+              <Link href="/likes">
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <Ionicons name="heart" size={20} color="#FF0000" />
+                  <Text style={styles.favoriteButtonText}>Ver Favoritos</Text>
+                </View>
+              </Link>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() =>
+                auth.signOut().then(() => {
+                  router.push("/login");
+                })
+              }
+              style={styles.logoutButton}
             >
-              <Image
-                source={{
-                  uri: "https://www.myiconstory.com/wp-content/uploads/2018/06/Cochabamba-Cristo-de-la-concordia.png",
-                }}
-                style={{ width: 64, height: 64 }}
-              />
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                }}
-              >
-                CONOCE COCHA
-              </Text>
-            </View>
-          ),
-        }}
-      />
-
-      <View style={styles.container}>
-        {isLoged ? (
-          <>
-            <View style={styles.container}>
-              <Image
-                source={{
-                  uri: "https://www.myiconstory.com/wp-content/uploads/2018/06/Cochabamba-Cristo-de-la-concordia.png",
-                }}
-                style={styles.mainImage}
-              />
-              <Text style={styles.title}>Bienvenido</Text>
-              <Text style={styles.mainTitle}>CONOCE COCHA</Text>
-
-              <TouchableOpacity style={styles.favoriteButton}>
-                <Link href="/likes">
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Ionicons name="heart" size={20} color="#FF0000" />
-                    <Text style={styles.favoriteButtonText}>Ver Favoritos</Text>
-                  </View>
-                </Link>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                onPress={() =>
-                  auth.signOut().then(() => {
-                    router.push("/login");
-                  })
-                }
-                style={styles.logoutButton}
-              >
-                <Text style={styles.logoutButtonText}>Cerrar sesión</Text>
-              </TouchableOpacity>
-            </View>
-          </>
-        ) : (
-          <>
+              <Text style={styles.logoutButtonText}>Cerrar sesión</Text>
+            </TouchableOpacity>
+          </View>
+        </>
+      ) : (
+        <>
+          <Stack.Screen
+            options={{
+              headerTransparent: true,
+              headerTitle: "",
+              headerLeft: () => (
+                <View
+                  style={{
+                    marginLeft: 20,
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingTop: 20,
+                    width: "100%",
+                  }}
+                >
+                  <Image
+                    source={{
+                      uri: "https://www.myiconstory.com/wp-content/uploads/2018/06/Cochabamba-Cristo-de-la-concordia.png",
+                    }}
+                    style={{ width: 64, height: 64 }}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    CONOCE COCHA
+                  </Text>
+                </View>
+              ),
+            }}
+          />
+          <View style={[styles.container, { paddingTop: headerHeight }]}>
             <Text style={styles.title}>Inicia sesión</Text>
             <Text style={styles.welcomeText}>
               Bienvenido a {"\n"}CONOCE COCHA
@@ -187,9 +194,9 @@ const LoginPage = () => {
                 </TouchableOpacity>
               </Link>
             </View>
-          </>
-        )}
-      </View>
+          </View>
+        </>
+      )}
     </>
   );
 };
