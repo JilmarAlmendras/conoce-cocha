@@ -14,11 +14,12 @@ import { Colors } from "@/constants/Colors";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 const agenda = () => {
+  // Función que abre el link recibido
   const headerHeight = useHeaderHeight();
-  const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/nkNBsGNeb414fXki8");
-  };
 
+  const handlePress = (url: string) => {
+    Linking.openURL(url);
+  };
   return (
     <>
       <Stack.Screen
@@ -59,11 +60,12 @@ const agenda = () => {
         <Text style={styles.title}>Recomendaciones</Text>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.cards}>
+            {/* Primer evento */}
             <View style={styles.item}>
               <View style={{ paddingTop: 10 }}>
                 <Image
                   source={{
-                    uri: "https://www.ibolivia.org/wp-content/uploads/2018/10/villa-tunari.jpg",
+                    uri: "https://scontent.fcbb2-1.fna.fbcdn.net/v/t39.30808-6/457186627_937609438412406_6003942543541605732_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kz67VcycmxgQ7kNvgHZz2F_&_nc_ht=scontent.fcbb2-1.fna&oh=00_AYDE_rtGAEOua9a9Hhik1GWHwv54OJ9UumT03fk1pGP3rg&oe=66DB0BC5",
                   }}
                   style={styles.image}
                 />
@@ -77,9 +79,9 @@ const agenda = () => {
                       paddingBottom: 8,
                     }}
                   >
-                    Obra "Porque a mi?"
+                    Noches de Arte
                   </Text>
-                  <Text>15 de agosto - 15:30</Text>
+                  <Text>2 de septiembre - 19:00 a 20:30</Text>
                 </View>
                 <View
                   style={{
@@ -94,10 +96,63 @@ const agenda = () => {
                     size={24}
                     color={Colors.primaryColor}
                   />
-                  <Text style={{ width: 100 }}>Teatro Adela Zamudio</Text>
+                  <Text style={{ width: 100 }}>Pasaje de la catedral</Text>
                   <TouchableOpacity
                     style={styles.goButton}
-                    onPress={handlePress}
+                    onPress={() =>
+                      handlePress("https://maps.app.goo.gl/PnWTf4mUdr8qtsbc8")
+                    }
+                  >
+                    <Text style={{ color: Colors.white }}>Ir</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          </View>
+
+          {/* Segundo evento */}
+          <View style={styles.cards}>
+            <View style={styles.item}>
+              <View style={{ paddingTop: 10 }}>
+                <Image
+                  source={{
+                    uri: "https://scontent.fcbb2-1.fna.fbcdn.net/v/t39.30808-6/457186627_937609438412406_6003942543541605732_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kz67VcycmxgQ7kNvgHZz2F_&_nc_ht=scontent.fcbb2-1.fna&oh=00_AYDE_rtGAEOua9a9Hhik1GWHwv54OJ9UumT03fk1pGP3rg&oe=66DB0BC5",
+                  }}
+                  style={styles.image}
+                />
+              </View>
+              <View style={{ flexDirection: "column" }}>
+                <View style={{ padding: 8 }}>
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: "600",
+                      paddingBottom: 8,
+                    }}
+                  >
+                    Concierto Acústico
+                  </Text>
+                  <Text>3 de septiembre - 18:00 a 20:00</Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: 8,
+                  }}
+                >
+                  <FontAwesome5
+                    name="map-marker-alt"
+                    size={24}
+                    color={Colors.primaryColor}
+                  />
+                  <Text style={{ width: 100 }}>Plaza de Armas</Text>
+                  <TouchableOpacity
+                    style={styles.goButton}
+                    onPress={() =>
+                      handlePress("https://maps.app.goo.gl/rCLj5rTZfcK4mQYHA")
+                    }
                   >
                     <Text style={{ color: Colors.white }}>Ir</Text>
                   </TouchableOpacity>
@@ -136,7 +191,6 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 10,
   },
-
   title: {
     padding: 20,
     textAlign: "center",

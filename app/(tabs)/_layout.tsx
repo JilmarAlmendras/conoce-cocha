@@ -10,7 +10,7 @@ import { auth } from "@/config/firebaseConfig";
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const isLoged = Boolean(auth.currentUser);
-  const logedProps = isLoged ? {} : { tabBarButton: () => null };
+  // const logedProps = isLoged ? {} : { tabBarButton: () => null };
 
   return (
     <Tabs
@@ -44,7 +44,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="likes"
         options={{
-          ...logedProps,
+          // ...logedProps,
           tabBarIcon: ({ color }) => (
             <Ionicons name="heart" size={28} color={color} />
           ),

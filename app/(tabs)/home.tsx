@@ -6,14 +6,16 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput,
+  Alert,
 } from "react-native";
 import { useState } from "react";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Link, Stack } from "expo-router";
-import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { useLugar } from "../LugarProvider";
-
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../config/firebaseConfig";
 export default function home() {
   const headerHeight = useHeaderHeight();
   const { lugares, filterLugarByName, addToFavorite } = useLugar();
@@ -21,6 +23,9 @@ export default function home() {
 
   const filteredData =
     searchText.length > 0 ? lugares.filter((item) => item.filtrado) : lugares;
+
+  // Obtén el estado de autenticación del usuario
+  const [user] = useAuthState(auth);
 
   return (
     <>
@@ -163,7 +168,14 @@ export default function home() {
                   </View>
                   <TouchableOpacity
                     onPress={() => {
-                      addToFavorite(item.id);
+                      if (user) {
+                        addToFavorite(item.id);
+                      } else {
+                        Alert.alert(
+                          "Inicie sesión",
+                          "Debe iniciar sesión para darle me gusta."
+                        );
+                      }
                     }}
                   >
                     {item.favorito ? (
