@@ -160,11 +160,11 @@ const LoginPage = () => {
               </TouchableOpacity>
             </View>
 
-            <TouchableOpacity>
+            {/* <TouchableOpacity>
               <Text style={styles.forgotPassword}>
                 ¿Olvidaste tu contraseña?
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity
               style={styles.loginButton}
