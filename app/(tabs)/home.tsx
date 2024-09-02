@@ -168,7 +168,12 @@ export default function home() {
                     }}
                   >
                     {item.favorito ? (
-                      <FontAwesome5 color="red" name="heart" solid size={24} />
+                      <FontAwesome5
+                        color="#a80100"
+                        name="heart"
+                        solid
+                        size={24}
+                      />
                     ) : (
                       <FontAwesome5 name="heart" size={24} />
                     )}

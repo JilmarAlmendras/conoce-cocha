@@ -106,7 +106,7 @@ const likes = () => {
                     >
                       {item.favorito ? (
                         <FontAwesome5
-                          color="red"
+                          color="#a80100"
                           name="heart"
                           solid
                           size={24}
