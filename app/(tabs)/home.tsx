@@ -17,7 +17,6 @@ import { useLugar } from "../LugarProvider";
 export default function home() {
   const headerHeight = useHeaderHeight();
   const { lugares, filterLugarByName, addToFavorite } = useLugar();
-
   const [searchText, setSearchText] = useState("");
 
   const filteredData =

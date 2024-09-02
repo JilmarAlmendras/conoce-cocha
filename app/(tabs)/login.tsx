@@ -11,14 +11,15 @@ import {
 import { Link, Stack, useRouter } from "expo-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebaseConfig";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false); // Estado para controlar la visibilidad
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const router = useRouter();
+  const isLoged = Boolean(auth.currentUser);
 
   const handleLogin = async () => {
     setLoading(true);

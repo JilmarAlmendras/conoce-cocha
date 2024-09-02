@@ -1,8 +1,9 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { Link, Stack } from "expo-router";
+import { Link, router, Stack } from "expo-router";
 import {} from "./(tabs)/login";
+import { auth } from "@/config/firebaseConfig";
 
 const signUpTrue = () => {
   return (
@@ -28,7 +29,14 @@ const signUpTrue = () => {
           <Text style={styles.favoriteButtonText}>Ver Favoritos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.logoutButton}>
+        <TouchableOpacity
+          onPress={() =>
+            auth.signOut().then(() => {
+              router.push("/login");
+            })
+          }
+          style={styles.logoutButton}
+        >
           <Text style={styles.logoutButtonText}>Cerrar sesión</Text>
         </TouchableOpacity>
       </View>

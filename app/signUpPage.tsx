@@ -11,12 +11,14 @@ import {
 import { Link, Stack, useRouter } from "expo-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebaseConfig";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handleSignUp = async () => {
     setLoading(true);
@@ -86,15 +88,27 @@ const SignUpPage = () => {
           onChangeText={setEmail}
           keyboardType="email-address"
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Contraseña"
-          placeholderTextColor="#A9A9A9"
-          autoCapitalize="none"
-          secureTextEntry
-          value={password}
-          onChangeText={setPassword}
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={[styles.input, styles.passwordInput]}
+            placeholder="Contraseña"
+            placeholderTextColor="#A9A9A9"
+            autoCapitalize="none"
+            secureTextEntry={!passwordVisible}
+            value={password}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={() => setPasswordVisible(!passwordVisible)}
+          >
+            <FontAwesome5
+              name={passwordVisible ? "eye" : "eye-slash"}
+              size={24}
+              color="#A9A9A9"
+            />
+          </TouchableOpacity>
+        </View>
 
         <TouchableOpacity
           style={styles.signUpButton}
@@ -171,5 +185,18 @@ const styles = StyleSheet.create({
   signInLink: {
     color: "#0047FF",
     fontWeight: "bold",
+  },
+  passwordContainer: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  passwordInput: {
+    flex: 1,
+  },
+  eyeIcon: {
+    position: "absolute",
+    right: 10,
+    top: 12,
   },
 });

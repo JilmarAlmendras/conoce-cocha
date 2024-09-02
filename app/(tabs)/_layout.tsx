@@ -5,9 +5,12 @@ import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Ionicons } from "@expo/vector-icons";
+import { auth } from "@/config/firebaseConfig";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const isLoged = Boolean(auth.currentUser);
+  const logedProps = isLoged ? {} : { tabBarButton: () => null };
 
   return (
     <Tabs
@@ -41,8 +44,17 @@ export default function TabLayout() {
       <Tabs.Screen
         name="likes"
         options={{
+          ...logedProps,
           tabBarIcon: ({ color }) => (
             <Ionicons name="heart" size={28} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="informacion"
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="information-circle" size={28} color={color} />
           ),
         }}
       />
