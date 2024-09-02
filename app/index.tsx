@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   image: {
-    width: 300, // Imagen más grande
-    height: 300,
+    width: 400, // Imagen más grande
+    height: 400,
     marginBottom: 40,
   },
   button: {
