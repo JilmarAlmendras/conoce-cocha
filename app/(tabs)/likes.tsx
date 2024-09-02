@@ -15,7 +15,7 @@ import { useLugar } from "../LugarProvider";
 
 const likes = () => {
   const headerHeight = useHeaderHeight();
-  const { lugares } = useLugar();
+  const { lugares, addToFavorite } = useLugar();
 
   return (
     <>
@@ -99,7 +99,22 @@ const likes = () => {
                         {item.location}
                       </Text>
                     </View>
-                    <FontAwesome5 color="red" name="gratipay" size={24} />
+                    <TouchableOpacity
+                      onPress={() => {
+                        addToFavorite(item.id);
+                      }}
+                    >
+                      {item.favorito ? (
+                        <FontAwesome5
+                          color="red"
+                          name="heart"
+                          solid
+                          size={24}
+                        />
+                      ) : (
+                        <FontAwesome5 name="heart" size={24} />
+                      )}
+                    </TouchableOpacity>
                   </View>
                 </View>
               ))}

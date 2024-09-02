@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Image,
   StyleSheet,
@@ -5,11 +6,51 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Alert,
 } from "react-native";
-import React from "react";
-import { Link, Stack } from "expo-router";
+import { Link, Stack, useRouter } from "expo-router";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebaseConfig";
+import { FontAwesome5 } from "@expo/vector-icons";
 
-const Page = () => {
+const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false); // Estado para controlar la visibilidad
+  const router = useRouter();
+
+  const handleLogin = async () => {
+    setLoading(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setLoading(false);
+      router.push("../signUpTrue"); // Redirigir
+    } catch (error: any) {
+      setLoading(false);
+      console.log("Error code:", error.code);
+      let errorMessage = "Ocurrió un error inesperado. Inténtalo nuevamente.";
+      if (error.code === "auth/user-not-found") {
+        errorMessage = "Usuario no encontrado.";
+      } else if (error.code === "auth/wrong-password") {
+        errorMessage = "Contraseña incorrecta.";
+      } else if (error.code === "auth/invalid-email") {
+        errorMessage = "Correo electrónico inválido.";
+      } else if (error.code === "auth/too-many-requests") {
+        errorMessage = "Demasiados intentos fallidos. Inténtalo más tarde.";
+      } else if (error.code === "auth/network-request-failed") {
+        errorMessage = "Error de red. Verifica tu conexión a internet.";
+      }
+      Alert.alert("Error de inicio de sesión", errorMessage);
+    }
+  };
+  useEffect(() => {
+    return () => {
+      setEmail("");
+      setPassword("");
+    };
+  }, []);
+
   return (
     <>
       <Stack.Screen
@@ -56,44 +97,61 @@ const Page = () => {
           placeholder="Email"
           placeholderTextColor="#A9A9A9"
           autoCapitalize="none"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Contraseña"
-          placeholderTextColor="#A9A9A9"
-          autoCapitalize="none"
-          secureTextEntry
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={[styles.input, styles.passwordInput]}
+            placeholder="Contraseña"
+            placeholderTextColor="#A9A9A9"
+            autoCapitalize="none"
+            secureTextEntry={!passwordVisible}
+            value={password}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={() => setPasswordVisible(!passwordVisible)}
+          >
+            <FontAwesome5
+              name={passwordVisible ? "eye" : "eye-slash"}
+              size={24}
+              color="#A9A9A9"
+            />
+          </TouchableOpacity>
+        </View>
 
         <TouchableOpacity>
           <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
         </TouchableOpacity>
 
-        <Link href="/signUpTrue" asChild>
-          <TouchableOpacity style={styles.loginButton}>
-            <Text style={styles.loginButtonText}>Iniciar sesión</Text>
-          </TouchableOpacity>
-        </Link>
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={handleLogin}
+          disabled={loading}
+        >
+          <Text style={styles.loginButtonText}>
+            {loading ? "Iniciando sesión..." : "Iniciar sesión"}
+          </Text>
+        </TouchableOpacity>
 
-        <Text style={styles.signUpText}>
-          ¿No tienes una cuenta?{" "}
+        <View style={{ flexDirection: "row", gap: 10 }}>
+          <Text style={styles.signUpText}>¿No tienes una cuenta? </Text>
+
           <Link href="/signUpPage" asChild>
             <TouchableOpacity>
-              <Text
-                style={styles.signUpLink}
-                //onPress={() => navigation.navigate("crear")}
-              >
-                Crea una cuenta
-              </Text>
+              <Text style={styles.signUpLink}>Crea una cuenta</Text>
             </TouchableOpacity>
           </Link>
-        </Text>
+        </View>
       </View>
     </>
   );
 };
 
-export default Page;
+export default LoginPage;
 
 const styles = StyleSheet.create({
   container: {
@@ -119,11 +177,23 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 50,
     borderWidth: 1,
-    //borderColor: "#DADADA",
     borderRadius: 8,
     paddingHorizontal: 10,
     marginBottom: 15,
     borderColor: "#1E90FF",
+  },
+  passwordContainer: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  passwordInput: {
+    flex: 1,
+  },
+  eyeIcon: {
+    position: "absolute",
+    right: 10,
+    top: 12,
   },
   forgotPassword: {
     alignSelf: "flex-end",

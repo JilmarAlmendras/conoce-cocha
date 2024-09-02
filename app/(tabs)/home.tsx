@@ -14,7 +14,7 @@ import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { useLugar } from "../LugarProvider";
 
-export default function HomeScreen() {
+export default function home() {
   const headerHeight = useHeaderHeight();
   const { lugares, filterLugarByName, addToFavorite } = useLugar();
 
@@ -168,7 +168,7 @@ export default function HomeScreen() {
                     }}
                   >
                     {item.favorito ? (
-                      <FontAwesome5 color="red" name="gratipay" size={24} />
+                      <FontAwesome5 color="red" name="heart" solid size={24} />
                     ) : (
                       <FontAwesome5 name="heart" size={24} />
                     )}
