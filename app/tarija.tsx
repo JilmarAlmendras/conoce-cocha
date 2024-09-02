@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const tarija = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/EaCfZ8farhFJ9pFx6");
+    Linking.openURL("https://maps.app.goo.gl/DzyEUHmvQ6PUWQ4d7");
   };
 
   const router = useRouter();

@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const demetrio = () => {
   const handlePress = () => {
-    Linking.openURL("");
+    Linking.openURL("https://maps.app.goo.gl/Pg7Da8DTTCsi3QcX9");
   };
 
   const router = useRouter();

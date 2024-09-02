@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const botanico = () => {
   const handlePress = () => {
-    Linking.openURL("");
+    Linking.openURL("https://maps.app.goo.gl/8oDAh5y6akWgsoeu6");
   };
 
   const router = useRouter();

@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const corazonistas = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/EaCfZ8farhFJ9pFx6");
+    Linking.openURL("https://maps.app.goo.gl/5GqEfNp1dxnfPVXz5");
   };
 
   const router = useRouter();

@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const parqueTunari = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/EaCfZ8farhFJ9pFx6");
+    Linking.openURL("https://maps.app.goo.gl/HkVaxB9n2E2Dsct86");
   };
 
   const router = useRouter();

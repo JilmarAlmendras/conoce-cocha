@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const fidelAnze = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/NVkDqWpRG6zsBvzo7");
+    Linking.openURL("https://maps.app.goo.gl/xYbcWzbS8m8NLemt9");
   };
 
   const router = useRouter();

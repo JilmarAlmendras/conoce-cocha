@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const banderas = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/EaCfZ8farhFJ9pFx6");
+    Linking.openURL("https://maps.app.goo.gl/cGpSS6SzxHfyf5YJ8");
   };
 
   const router = useRouter();
@@ -68,8 +68,13 @@ const banderas = () => {
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          Conocida por su monumento de banderas de distintos países, esta plaza
-          es escenario de diversas celebraciones y eventos.
+        La Plaza de las Banderas está ubicada entre el final de la Av. Ballivián, 
+        también conocida como El Prado, y el puente Cala-Cala, esta plaza representa 
+        la unión de los pueblos americanos, luciendo las banderas de cada uno de ellos.
+         También posee la fuente Carlos Montenegro que representa “La diversidad en equilibrio”,
+          del artista boliviano Andrés Gavilano.
+
+
         </Text>
 
         <View style={styles.buttonContainer}>

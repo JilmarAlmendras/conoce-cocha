@@ -530,7 +530,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://manfredreyesvilla.com/sites/default/files/styles/wide/public/2023-10/Imagen%20de%20WhatsApp%202023-10-04%20a%20las%2012.40.27_83c12b1a.jpg?itok=hBXycZ2t",
       favorito: false,
-      ruta: "/fidelAnze",
+      ruta: "/fidelAnce",
       categories: ["verdes"],
     },
   ]);
