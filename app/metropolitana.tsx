@@ -11,9 +11,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const metropolitana = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/VvCrM1AK86gEpFDH8");
   };
 
   const router = useRouter();
@@ -60,21 +60,20 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
+        <Text style={styles.title}>Catedral Metropolitana</Text>
         <Image
           source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
+            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Catedral_metropolitana_San_Sebasti%C3%A1n_de_Cochabamba.jpg/640px-Catedral_metropolitana_San_Sebasti%C3%A1n_de_Cochabamba.jpg",
           }}
           style={styles.mainImage}
         />
 
         <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
+          La Catedral Metropolitana de Cochabamba es uno de los edificios más
+          icónicos de la ciudad, conocido por su impresionante arquitectura y su
+          importancia histórica. Situada en la Plaza 14 de Septiembre, esta
+          catedral combina estilos barroco y renacentista, y alberga magníficos
+          altares, esculturas y pinturas que datan de varios siglos.
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -87,7 +86,7 @@ const Alcide = () => {
   );
 };
 
-export default Alcide;
+export default metropolitana;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

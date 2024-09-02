@@ -1,6 +1,7 @@
 import {
   Image,
   Linking,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -11,9 +12,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const totora = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/DJDeGjNtiXCFfE6v6");
   };
 
   const router = useRouter();
@@ -60,34 +61,40 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
-        <Image
-          source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
-          }}
-          style={styles.mainImage}
-        />
+        <Text style={styles.title}>Totora</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Image
+            source={{
+              uri: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6PFTy9OfnwfiBOiMDZ9eYFWa6vsDlDjy2rewI9u4i-EU7PQimnV0TNBVMRhLJRcOhdREireoIvrCcvqrN8JZ3fcJTkBtsNw2dN55BIIzstgwl66_BtM6Xiwy9Fub-nAChZ6LVBedDL91U/s1600/P1010104.JPG",
+            }}
+            style={styles.mainImage}
+          />
+          <Image
+            source={{
+              uri: "https://live.staticflickr.com/4138/4927464762_f8dff92d4f_b.jpg",
+            }}
+            style={styles.mainImage}
+          />
+          <Text style={styles.description}>
+            Declarado Patrimonio Histórico y Arquitectónico, Totora fascina con
+            sus calles empedradas, casas coloniales y la calidez de su gente,
+            brindando una experiencia de viaje al pasado. Totora es un lugar
+            donde la historia se mantiene viva en su arquitectura y en sus
+            costumbres.
+          </Text>
 
-        <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
-        </Text>
-
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>ubicación</Text>
-          </TouchableOpacity>
-        </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.goButton} onPress={handlePress}>
+              <Text style={styles.goButtonText}>ubicación</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </>
   );
 };
 
-export default Alcide;
+export default totora;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +116,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

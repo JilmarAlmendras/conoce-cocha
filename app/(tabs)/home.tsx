@@ -7,6 +7,7 @@ import {
   ScrollView,
   TextInput,
   Alert,
+  Dimensions,
 } from "react-native";
 import { useState } from "react";
 import { useHeaderHeight } from "@react-navigation/elements";
@@ -16,6 +17,9 @@ import { Colors } from "@/constants/Colors";
 import { useLugar } from "../LugarProvider";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../config/firebaseConfig";
+
+const { width } = Dimensions.get("window");
+
 export default function home() {
   const headerHeight = useHeaderHeight();
   const { lugares, filterLugarByName, addToFavorite } = useLugar();
@@ -34,31 +38,14 @@ export default function home() {
           headerTransparent: true,
           headerTitle: "",
           headerLeft: () => (
-            <View
-              style={{
-                marginLeft: 20,
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                paddingTop: 20,
-                width: "100%",
-              }}
-            >
+            <View style={styles.headerLeft}>
               <Image
                 source={{
                   uri: "https://www.myiconstory.com/wp-content/uploads/2018/06/Cochabamba-Cristo-de-la-concordia.png",
                 }}
-                style={{ width: 64, height: 64 }}
+                style={styles.headerImage}
               />
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                }}
-              >
-                CONOCE COCHA
-              </Text>
+              <Text style={styles.headerTitle}>CONOCE COCHA</Text>
             </View>
           ),
         }}
@@ -72,14 +59,7 @@ export default function home() {
             filterLugarByName(text);
           }}
           placeholder="Buscar..."
-          style={{
-            borderColor: Colors.black,
-            borderWidth: 1,
-            borderRadius: 10,
-            padding: 10,
-            marginBottom: 10,
-            backgroundColor: Colors.white,
-          }}
+          style={styles.searchInput}
         />
 
         {/* Botones de las categorías */}
@@ -87,11 +67,7 @@ export default function home() {
           <ScrollView
             showsHorizontalScrollIndicator={false}
             horizontal
-            contentContainerStyle={{
-              gap: 20,
-              paddingVertical: 10,
-              marginBottom: 10,
-            }}
+            contentContainerStyle={styles.categoryScrollView}
           >
             <View style={styles.containerBtn}>
               <TouchableOpacity>
@@ -147,18 +123,8 @@ export default function home() {
                 >
                   {item.name}
                 </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    gap: 50,
-                    justifyContent: "space-between",
-                    paddingLeft: 20,
-                    paddingRight: 20,
-                    paddingBottom: 10,
-                    paddingTop: 10,
-                  }}
-                >
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <View style={styles.itemFooter}>
+                  <View style={styles.itemLocation}>
                     <FontAwesome5
                       name="map-marker-alt"
                       size={24}
@@ -205,6 +171,36 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 20,
   },
+  headerLeft: {
+    marginLeft: 20,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 20,
+    width: "100%",
+  },
+  headerImage: {
+    width: 64,
+    height: 64,
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  searchInput: {
+    borderColor: Colors.black,
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+    backgroundColor: Colors.white,
+  },
+  categoryScrollView: {
+    gap: 20,
+    paddingVertical: 10,
+    marginBottom: 10,
+  },
   containerBtn: {
     flexDirection: "row",
     gap: 10,
@@ -236,11 +232,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     padding: 10,
     borderRadius: 10,
-    width: 320,
+    width: width * 0.9,
   },
   image: {
-    width: 300,
-    height: 300,
+    width: "100%",
+    height: 200,
     borderRadius: 10,
   },
   itemTxt: {
@@ -250,6 +246,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingTop: 10,
     paddingLeft: 10,
+  },
+  itemFooter: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  itemLocation: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   itemLocationTxt: {
     fontSize: 16,

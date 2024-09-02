@@ -11,9 +11,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const mizque = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/PQpuenDBrKfr77Z46");
   };
 
   const router = useRouter();
@@ -60,21 +60,20 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
+        <Text style={styles.title}>Mizque</Text>
         <Image
           source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
+            uri: "https://gammizque.gob.bo/wp-content/uploads/2023/04/Templo-desde-arriba-1920x700-1.jpg",
           }}
           style={styles.mainImage}
         />
 
         <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
+          es un pueblo con una rica historia que se refleja en cada rincón de
+          sus calles empedradas y en su arquitectura colonial bien conservada.
+          Situado en un valle fértil, Mizque es conocido por su producción
+          agrícola, especialmente de uvas y frutas tropicales, que se utilizan
+          para hacer vinos y otros productos tradicionales.
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -87,7 +86,7 @@ const Alcide = () => {
   );
 };
 
-export default Alcide;
+export default mizque;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

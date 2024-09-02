@@ -43,7 +43,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://4.bp.blogspot.com/-dQzhNN2seSA/WvTMG5fCRsI/AAAAAAAAAtE/5oLu8rCraYkqSSTuiSFMBdS-NfDRbYzlgCLcBGAs/w1200-h630-p-k-no-nu/arani%2Biglesia.jpg",
       favorito: false,
-      ruta: "/Arani",
+      ruta: "/arani",
       categories: ["pueblos"],
     },
     {
@@ -52,7 +52,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       location: "Totora",
       image: "https://live.staticflickr.com/4138/4927464762_f8dff92d4f_b.jpg",
       favorito: false,
-      ruta: "/Totora",
+      ruta: "/totora",
       categories: ["pueblos"],
     },
     {
@@ -62,7 +62,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://wp.es.aleteia.org/wp-content/uploads/sites/7/2023/04/WEB-CONVENTO-FRANCISCANO-TARATA-BOLIVIA-17-Cortesia.JPG",
       favorito: false,
-      ruta: "/Tarata",
+      ruta: "/tarata",
       categories: ["pueblos"],
     },
     {
@@ -71,7 +71,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       location: "Valle Alto",
       image: "https://live.staticflickr.com/4364/36519690014_f82ed0ed90_b.jpg",
       favorito: false,
-      ruta: "/Cliza",
+      ruta: "/cliza",
       categories: ["pueblos"],
     },
     {
@@ -81,7 +81,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://www.ilvabolivia.com/wp-content/uploads/2021/05/plaza-principal.jpeg",
       favorito: false,
-      ruta: "/Punata",
+      ruta: "/punata",
       categories: ["pueblos"],
     },
     {
@@ -91,7 +91,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://www.lostiempos.com/sites/default/files/styles/noticia_detalle/public/media_imagen/2020/4/30/sipe_sipe.jpg?itok=CzRZBzoj",
       favorito: false,
-      ruta: "/SipeSipe",
+      ruta: "/sipesipe",
       categories: ["pueblos"],
     },
     {
@@ -101,7 +101,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://i.ytimg.com/vi/shUrNYuhBHY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGGUgWihTMA8=&rs=AOn4CLAwpkq_RkWcIN15ZF9cXE0nlSNuCw",
       favorito: false,
-      ruta: "/Vinto",
+      ruta: "/vinto",
       categories: ["pueblos"],
     },
     {
@@ -111,7 +111,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://gammizque.gob.bo/wp-content/uploads/2023/04/Templo-desde-arriba-1920x700-1.jpg",
       favorito: false,
-      ruta: "/Mizque",
+      ruta: "/mizque",
       categories: ["pueblos"],
     },
     {
@@ -121,7 +121,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://2.bp.blogspot.com/-gHz3PJfPT6o/U-qQ7qqwsAI/AAAAAAAAEwc/xWnF7g6-kJQ/s1600/DSC06545.jpg",
       favorito: false,
-      ruta: "/Tiquipaya",
+      ruta: "/tiquipaya",
       categories: ["pueblos"],
     },
     {
@@ -131,7 +131,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://www.opinion.com.bo/asset/thumbnail,992,558,center,center/media/opinion/images/2024/08/27/2024082722314462861.jpg",
       favorito: false,
-      ruta: "/SanBartolome",
+      ruta: "/bartolome",
       categories: ["iglesias"],
     },
     {
@@ -141,7 +141,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Catedral_metropolitana_San_Sebasti%C3%A1n_de_Cochabamba.jpg/640px-Catedral_metropolitana_San_Sebasti%C3%A1n_de_Cochabamba.jpg",
       favorito: false,
-      ruta: "/Metropolitana",
+      ruta: "/metropolitana",
       categories: ["iglesias"],
     },
     {
@@ -151,7 +151,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/TEMPLO_SAN_FRANCISCO_COCHABAMBA.jpg/431px-TEMPLO_SAN_FRANCISCO_COCHABAMBA.jpg",
       favorito: false,
-      ruta: "/Francisco",
+      ruta: "/francisco",
       categories: ["iglesias"],
     },
     {
@@ -161,7 +161,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/2/20/Templo_de_Santo_Domingo_de_la_Ciudad_de_Cochabamba_30.jpg",
       favorito: false,
-      ruta: "/Domingo",
+      ruta: "/domingo",
       categories: ["iglesias"],
     },
     {
@@ -171,7 +171,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Iglesia_El_Hospicio%2C_Cochabamba.jpg/1024px-Iglesia_El_Hospicio%2C_Cochabamba.jpg",
       favorito: false,
-      ruta: "/Hospicio",
+      ruta: "/hospicio",
       categories: ["iglesias"],
     },
     {
@@ -181,7 +181,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://i0.wp.com/tinformas.com/wp-content/uploads/2024/08/Iglesia-de-San-Ildefonso-santuario-de-la-Virgen-de-Urkupina.jpg?fit=1200%2C738&ssl=1",
       favorito: false,
-      ruta: "/Urkupiña",
+      ruta: "/urku",
       categories: ["iglesias"],
     },
     {
@@ -191,7 +191,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/0/0f/Iglesia_san_pedro_COCHABAMBA.jpg",
       favorito: false,
-      ruta: "/Sanpedro",
+      ruta: "/sanPedro",
       categories: ["iglesias"],
     },
     {
@@ -201,7 +201,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://boliviatravelsite.com/Images/Attractionphotos/la-recoleta-005.jpg",
       favorito: false,
-      ruta: "/Recoleta",
+      ruta: "/recoleta",
       categories: ["iglesias"],
     },
     {
@@ -210,7 +210,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       location: "Cercado",
       image: "https://i.ytimg.com/vi/nfxskN0zas0/maxresdefault.jpg",
       favorito: false,
-      ruta: "/Joaquin",
+      ruta: "/joaquin",
       categories: ["iglesias"],
     },
     {
@@ -239,7 +239,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       image:
         "https://www.boliviaentusmanos.com/turismo/imagenes/convento-museo-santa-teresa-1.jpg",
       favorito: false,
-      ruta: "/Teresa",
+      ruta: "/teresa",
       categories: ["museos"],
     },
     {
@@ -248,7 +248,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       location: "Cercado",
       image: "https://dondebolivia.com/wp-content/uploads/martin_cardenas1.jpg",
       favorito: false,
-      ruta: "/Cardenas",
+      ruta: "/cardenas",
       categories: ["museos"],
     },
     {

@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Alert,
 } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
@@ -12,6 +13,8 @@ import { Link, router, Stack } from "expo-router";
 import { Feather, FontAwesome5 } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { useLugar } from "./LugarProvider";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../config/firebaseConfig";
 
 const iglesias = () => {
   const headerHeight = useHeaderHeight();
@@ -19,6 +22,7 @@ const iglesias = () => {
   const iglesias = lugares.filter((item) =>
     item.categories.includes("iglesias")
   );
+  const [user] = useAuthState(auth);
 
   return (
     <>
@@ -107,11 +111,23 @@ const iglesias = () => {
                   </View>
                   <TouchableOpacity
                     onPress={() => {
-                      addToFavorite(item.id);
+                      if (user) {
+                        addToFavorite(item.id);
+                      } else {
+                        Alert.alert(
+                          "Inicie sesión",
+                          "Debe iniciar sesión para darle me gusta."
+                        );
+                      }
                     }}
                   >
                     {item.favorito ? (
-                      <FontAwesome5 color="red" name="gratipay" size={24} />
+                      <FontAwesome5
+                        color="#a80100"
+                        name="heart"
+                        solid
+                        size={24}
+                      />
                     ) : (
                       <FontAwesome5 name="heart" size={24} />
                     )}

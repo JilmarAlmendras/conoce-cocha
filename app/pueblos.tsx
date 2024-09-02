@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Alert,
 } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
@@ -12,11 +13,16 @@ import { Feather, FontAwesome5 } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Link, router, Stack } from "expo-router";
 import { useLugar } from "./LugarProvider";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../config/firebaseConfig";
 
 const pueblos = () => {
   const headerHeight = useHeaderHeight();
   const { lugares, addToFavorite } = useLugar();
   const pueblos = lugares.filter((item) => item.categories.includes("pueblos"));
+
+  // Obtén el estado de autenticación del usuario
+  const [user] = useAuthState(auth);
 
   return (
     <>
@@ -67,7 +73,7 @@ const pueblos = () => {
 
       <View style={[styles.container, { paddingTop: headerHeight }]}>
         <Text style={styles.txtTitle}>Pueblos</Text>
-        {/* desde aqui comienza los cards */}
+        {/* Desde aquí comienza los cards */}
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.cards}>
             {pueblos.map((item, index) => (
@@ -105,11 +111,23 @@ const pueblos = () => {
                   </View>
                   <TouchableOpacity
                     onPress={() => {
-                      addToFavorite(item.id);
+                      if (user) {
+                        addToFavorite(item.id);
+                      } else {
+                        Alert.alert(
+                          "Inicie sesión",
+                          "Debe iniciar sesión para darle me gusta."
+                        );
+                      }
                     }}
                   >
                     {item.favorito ? (
-                      <FontAwesome5 color="red" name="gratipay" size={24} />
+                      <FontAwesome5
+                        color="#a80100"
+                        name="heart"
+                        solid
+                        size={24}
+                      />
                     ) : (
                       <FontAwesome5 name="heart" size={24} />
                     )}

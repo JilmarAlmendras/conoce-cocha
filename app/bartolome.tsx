@@ -11,9 +11,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const bartolome = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/dRdK7nygC1AGoBwe8");
   };
 
   const router = useRouter();
@@ -60,21 +60,20 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
+        <Text style={styles.title}>Templo San Bartolomé</Text>
         <Image
           source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
+            uri: "https://www.opinion.com.bo/asset/thumbnail,992,558,center,center/media/opinion/images/2024/08/27/2024082722314462861.jpg",
           }}
           style={styles.mainImage}
         />
 
         <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
+          El Templo San Bartolomé es una joya arquitectónica situada en el
+          corazón de Cochabamba. Su fachada barroca, adornada con intrincados
+          detalles escultóricos y columnas talladas, refleja el esplendor del
+          estilo colonial que caracteriza a muchos de los edificios religiosos
+          de la región.
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -87,7 +86,7 @@ const Alcide = () => {
   );
 };
 
-export default Alcide;
+export default bartolome;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

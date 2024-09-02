@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 150,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

@@ -11,9 +11,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const sipesipe = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/wV6ptdXmq3vT56Q7A");
   };
 
   const router = useRouter();
@@ -60,21 +60,20 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
+        <Text style={styles.title}>Sipe Sipe</Text>
         <Image
           source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
+            uri: "https://www.lostiempos.com/sites/default/files/styles/noticia_detalle/public/media_imagen/2020/4/30/sipe_sipe.jpg?itok=CzRZBzoj",
           }}
           style={styles.mainImage}
         />
 
         <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
+          Sipe Sipe es un pueblo tranquilo y encantador conocido por su
+          producción de vinos y singanis. Este pequeño rincón de Cochabamba
+          ofrece a los visitantes la oportunidad de disfrutar de catas de vino
+          en sus bodegas locales, muchas de las cuales han mantenido sus
+          tradiciones vinícolas por generaciones.
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -87,7 +86,7 @@ const Alcide = () => {
   );
 };
 
-export default Alcide;
+export default sipesipe;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

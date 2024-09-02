@@ -63,7 +63,7 @@ const teresa = () => {
         <Text style={styles.title}>Convento Santa Teresa</Text>
         <Image
           source={{
-            uri: "https://www.boliviaentusmanos.com/turismo/imagenes/convento-museo-santa-teresa-1.jp",
+            uri: "https://www.boliviaentusmanos.com/turismo/imagenes/convento-museo-santa-teresa-1.jpg",
           }}
           style={styles.mainImage}
         />
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 150,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

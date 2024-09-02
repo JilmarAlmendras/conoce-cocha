@@ -1,6 +1,7 @@
 import {
   Image,
   Linking,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -11,9 +12,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const tarata = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/4ks2oa6Kf3Bptfvk8");
   };
 
   const router = useRouter();
@@ -60,34 +61,39 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
-        <Image
-          source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
-          }}
-          style={styles.mainImage}
-        />
+        <Text style={styles.title}>Tarata</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Image
+            source={{
+              uri: "https://www.rumbosdelperu.com/wp-content/uploads/2019/05/TarataLodge-.jpg",
+            }}
+            style={styles.mainImage}
+          />
+          <Image
+            source={{
+              uri: "https://wp.es.aleteia.org/wp-content/uploads/sites/7/2023/04/WEB-CONVENTO-FRANCISCANO-TARATA-BOLIVIA-17-Cortesia.JPG",
+            }}
+            style={styles.mainImage}
+          />
+          <Text style={styles.description}>
+            Es uno de los pueblos más históricos y encantadores de Cochabamba.
+            Con una rica herencia que se refleja en su arquitectura virreinal,
+            Tarata ha sido un importante centro cultural y religioso desde la
+            época colonial.
+          </Text>
 
-        <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
-        </Text>
-
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>ubicación</Text>
-          </TouchableOpacity>
-        </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.goButton} onPress={handlePress}>
+              <Text style={styles.goButtonText}>ubicación</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </>
   );
 };
 
-export default Alcide;
+export default tarata;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",

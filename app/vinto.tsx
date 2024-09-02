@@ -1,6 +1,7 @@
 import {
   Image,
   Linking,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -11,9 +12,9 @@ import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 
-const Alcide = () => {
+const vinto = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FE4EGoAchkddDmcs9");
+    Linking.openURL("https://maps.app.goo.gl/hf7GkqjA5R4N99Tx6");
   };
 
   const router = useRouter();
@@ -60,34 +61,41 @@ const Alcide = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Museo de Historia Alcide d'Orbign</Text>
-        <Image
-          source={{
-            uri: "https://boliviaprensa.com/images/museopotosiuno.jpg",
-          }}
-          style={styles.mainImage}
-        />
+        <Text style={styles.title}>Vinto</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Image
+            source={{
+              uri: "https://i.ytimg.com/vi/shUrNYuhBHY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGGUgWihTMA8=&rs=AOn4CLAwpkq_RkWcIN15ZF9cXE0nlSNuCw",
+            }}
+            style={styles.mainImage}
+          />
+          <Image
+            source={{
+              uri: "https://dondebolivia.com/wp-content/uploads/31080605.jpg",
+            }}
+            style={styles.mainImage}
+          />
 
-        <Text style={styles.description}>
-          Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
-          quien exploró y documentó gran parte de la flora y fauna de Bolivia en
-          el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
-          de la región, con exhibiciones que incluyen fósiles, especímenes de
-          animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
-        </Text>
+          <Text style={styles.description}>
+            Es un pueblo que combina lo mejor de la modernidad y la tradición en
+            un entorno acogedor. Conocido por sus festividades y su producción
+            de frutas frescas, Vinto es un lugar donde los visitantes pueden
+            disfrutar de la calidez de la comunidad local mientras exploran sus
+            mercados y plazas llenas de vida.
+          </Text>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>ubicación</Text>
-          </TouchableOpacity>
-        </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.goButton} onPress={handlePress}>
+              <Text style={styles.goButtonText}>ubicación</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </>
   );
 };
 
-export default Alcide;
+export default vinto;
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -109,7 +117,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 100,
   },
   mainImage: {
     width: "100%",
