@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const sanPedro = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/Wjj9mZGZJhGrQo6TA");
+    Linking.openURL("https://maps.app.goo.gl/ARKMForfCYj9GEb47");
   };
 
   const router = useRouter();

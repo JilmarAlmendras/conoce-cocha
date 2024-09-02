@@ -251,16 +251,16 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       ruta: "/cardenas",
       categories: ["museos"],
     },
-    {
-      id: 24,
-      name: "Museo Paleontológico",
-      location: "Cercado",
-      image:
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjF1o-UwcfZMnRvdIMrfehCxanmHbt0hCcPiWuNUliQjJrQd3_dLJAYmvl7eGLDQNenrimZoQcfFHoZnVlIQWyyjmKokLDzJrz389dE14FmWzy06Cr6rbnrQiWhMpvexsmhsJijAaxMXM/s1600/Sacaba+inaugura+primera+fase+del+Museo+Municipal.jpg",
-      favorito: false,
-      ruta: "/paleon",
-      categories: ["museos"],
-    },
+    // {
+    //   id: 24,
+    //   name: "Museo Paleontológico",
+    //   location: "Cercado",
+    //   image:
+    //     "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjF1o-UwcfZMnRvdIMrfehCxanmHbt0hCcPiWuNUliQjJrQd3_dLJAYmvl7eGLDQNenrimZoQcfFHoZnVlIQWyyjmKokLDzJrz389dE14FmWzy06Cr6rbnrQiWhMpvexsmhsJijAaxMXM/s1600/Sacaba+inaugura+primera+fase+del+Museo+Municipal.jpg",
+    //   favorito: false,
+    //   ruta: "/paleon",
+    //   categories: ["museos"],
+    // },
     {
       id: 25,
       name: "Museo Casona Santiváñez",
