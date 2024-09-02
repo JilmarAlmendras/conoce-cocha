@@ -68,13 +68,16 @@ const parqueTunari = () => {
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          Una vasta área natural que ofrece rutas de senderismo, biodiversidad y
-          vistas panorámicas de Cochabamba.
+        Descubre en un viaje fascinante a través del Parque Nacional Tunari, 
+        la maravilla natural ubicada en los increíbles Andes bolivianos. 
+        Con sus imponentes cumbres montañosas, biodiversidad sorprendente y una historia 
+        rica en cultura, este parque ofrece una experiencia única para los entusiastas de la aventura, 
+        amantes de la naturaleza y viajeros ávidos de conocimiento.
         </Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

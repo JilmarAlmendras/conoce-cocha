@@ -69,18 +69,13 @@ const totora = () => {
             }}
             style={styles.mainImage}
           />
-          <Image
-            source={{
-              uri: "https://live.staticflickr.com/4138/4927464762_f8dff92d4f_b.jpg",
-            }}
-            style={styles.mainImage}
-          />
+
           <Text style={styles.description}>
-            Declarado Patrimonio Histórico y Arquitectónico, Totora fascina con
+          Declarado Patrimonio Histórico y Arquitectónico, Totora fascina con
             sus calles empedradas, casas coloniales y la calidez de su gente,
             brindando una experiencia de viaje al pasado. Totora es un lugar
             donde la historia se mantiene viva en su arquitectura y en sus
-            costumbres.
+            costumbres.
           </Text>
 
           <View style={styles.buttonContainer}>
@@ -116,7 +111,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 100,
+    paddingTop: 150,
   },
   mainImage: {
     width: "100%",

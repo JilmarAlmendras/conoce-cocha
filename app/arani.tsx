@@ -65,12 +65,6 @@ const arani = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Image
             source={{
-              uri: "https://4.bp.blogspot.com/-dQzhNN2seSA/WvTMG5fCRsI/AAAAAAAAAtE/5oLu8rCraYkqSSTuiSFMBdS-NfDRbYzlgCLcBGAs/w1200-h630-p-k-no-nu/arani%2Biglesia.jpg",
-            }}
-            style={styles.mainImage}
-          />
-          <Image
-            source={{
               uri: "https://www.opinion.com.bo/asset/thumbnail,992,558,center,center/media/opinion/images/2020/12/19/2020121922475333651.jpg",
             }}
             style={styles.mainImage}
@@ -114,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 100,
+    paddingTop: 150,
   },
   mainImage: {
     width: "100%",

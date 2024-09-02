@@ -68,13 +68,15 @@ const familia = () => {
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          Ideal para pasar tiempo en familia, este parque ofrece juegos
-          infantiles, áreas de picnic y senderos.
+        El Parque de la Familia es un espacio turístico, destinado a la orientación alternativa recreacional,
+        para los segmentos poblacionales: Niñez, Adolescencia y Adulto Mayor.
+        Donde se destaca el espectáculo con 5 fuentes de aguas danzantes las cuales se llaman: fuente de la alegría, fuente de los deseos, fuente de la amistad, túnel de la esperanza,
+        fuente principal y ofrece asombrosos espectáculos de luces y proyecciones en el agua en dos funciones, con chorros de hasta 20 metros sincronizados con la música.
         </Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

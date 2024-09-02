@@ -68,13 +68,16 @@ const villaroel = () => {
           style={styles.mainImage}
         />
         <Text style={styles.description}>
+        Gualberto Villarroel López (Muela (hoy Villa Rivero), 15 de diciembre de 1908-La Paz, 
+        Bolivia, 21 de julio de 1946) fue un militar, político boliviano.
           Este monumento honra al expresidente boliviano Gualberto Villarroel,
           que fue una figura clave en la historia del país.
+
         </Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

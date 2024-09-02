@@ -323,10 +323,10 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
     },
     {
       id: 34,
-      name: "Monumento al Soldado Desconocido",
+      name: "Monumento a Alejo Calatayud",
       location: "Cercado",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9LccQCzzKGo-FuUYr3QKsA3PNzqvCqcYB1g&s",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alejo_Calatayud_en_el_Puente_a_Quillacollo-Cochabamba%2C_Bolivia-2.jpg/800px-Alejo_Calatayud_en_el_Puente_a_Quillacollo-Cochabamba%2C_Bolivia-2.jpg?20180930151328",
       favorito: false,
       ruta: "/soldado",
       categories: ["monumentos"],
@@ -367,7 +367,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       name: "Plaza Sucre",
       location: "Cercado",
       image:
-        "https://guia.lostiemposvideos.com/wp-content/uploads/2022/12/15_me_2_andiaaaaa-min-1.jpg",
+        "https://fastly.4sqi.net/img/general/600x600/306971_gGR82lJ3hu02Xe2D9ubgoTpS2EybMUG9_CjElRAoSFM.jpg",
       favorito: false,
       ruta: "/sucre",
       categories: ["plazas"],
@@ -458,7 +458,7 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
       name: "Parque de la Familia",
       location: "Zona central",
       image:
-        "https://www.boliviaentusmanos.com/turismo/imagenes/parque-de-la-familia-1.jpg",
+        "https://www.civitatis.com/f/bolivia/cochabamba/galeria/fuente-parque-familia.jpg",
       favorito: false,
       ruta: "/familia",
       categories: ["verdes"],
@@ -485,24 +485,24 @@ export const LugarProvider = ({ children }: { children: ReactNode }) => {
     },
     {
       id: 50,
-      name: "Parque Ecológico de la Angostura",
+      name: "Angostura",
       location: "Angostura",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/3/33/Laguna_Angostura_near_Cochabamba%2C_Bolivia.jpg",
+        "https://live.staticflickr.com/4118/4942179270_738f05a855_h.jpg",
       favorito: false,
       ruta: "/angostura",
       categories: ["verdes"],
     },
-    {
-      id: 21,
-      name: "Parque Kanata",
-      location: "Zona sur",
-      image:
-        "https://dondebolivia.com/wp-content/uploads/cache/images/7-_b_1-_andiaaa/7-_b_1-_andiaaa-2944062932.jpg",
-      favorito: false,
-      ruta: "/kanata",
-      categories: ["verdes"],
-    },
+    // {
+    //   id: 21,
+    //   name: "Parque Kanata",
+    //   location: "Zona sur",
+    //   image:
+    //     "https://dondebolivia.com/wp-content/uploads/cache/images/7-_b_1-_andiaaa/7-_b_1-_andiaaa-2944062932.jpg",
+    //   favorito: false,
+    //   ruta: "/kanata",
+    //   categories: ["verdes"],
+    // },
     {
       id: 52,
       name: "Parque Demetrio Canelas",

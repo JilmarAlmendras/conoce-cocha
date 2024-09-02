@@ -89,6 +89,9 @@ const vinto = () => {
               <Text style={styles.goButtonText}>ubicación</Text>
             </TouchableOpacity>
           </View>
+          <Text style={styles.description}>
+            
+          </Text>
         </ScrollView>
       </View>
     </>
@@ -117,7 +120,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 100,
+    paddingTop: 150,
   },
   mainImage: {
     width: "100%",

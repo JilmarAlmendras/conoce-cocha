@@ -67,14 +67,13 @@ const Alcide = () => {
           }}
           style={styles.mainImage}
         />
-
         <Text style={styles.description}>
           Este museo lleva el nombre del naturalista francés Alcide d’Orbigny,
           quien exploró y documentó gran parte de la flora y fauna de Bolivia en
           el siglo XIX. El museo ofrece una mirada profunda a la biodiversidad
           de la región, con exhibiciones que incluyen fósiles, especímenes de
           animales, y plantas que ilustran la rica variedad de ecosistemas
-          bolivianos.
+          bolivianos
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 150,
   },
   mainImage: {
     width: "100%",

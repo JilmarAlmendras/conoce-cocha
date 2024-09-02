@@ -69,12 +69,7 @@ const tarata = () => {
             }}
             style={styles.mainImage}
           />
-          <Image
-            source={{
-              uri: "https://wp.es.aleteia.org/wp-content/uploads/sites/7/2023/04/WEB-CONVENTO-FRANCISCANO-TARATA-BOLIVIA-17-Cortesia.JPG",
-            }}
-            style={styles.mainImage}
-          />
+          
           <Text style={styles.description}>
             Es uno de los pueblos más históricos y encantadores de Cochabamba.
             Con una rica herencia que se refleja en su arquitectura virreinal,
@@ -115,7 +110,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 100,
+    paddingTop: 150,
   },
   mainImage: {
     width: "100%",

@@ -63,18 +63,20 @@ const villaTunari = () => {
         <Text style={styles.title}>Cristo de la Concordia</Text>
         <Image
           source={{
-            uri: "https://www.boliviaentusmanos.com/imagenes/ciudades/650x400/cochabamba.jpg",
+            uri: "https://www.boliviaentusmanos.com/turismo/imagenes/cristo-de-la-concordia-1.jpg",
           }}
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          El Cristo de la Concordia es uno de los monumentos más grandes de
-          Sudamérica, con vistas panorámicas de la ciudad desde la cima.
+        El Cristo de la Concordia es una estatua monumental de Jesucristo, ubicada sobre el 
+        cerro de San Pedro en la ciudad de Cochabamba, Bolivia, a una altura de 265 m sobre la ciudad. 
+        La estatua mide 34,20 m de altura,
+         sobre un pedestal de 6,24 m, con una altura total de 40,44 m.
         </Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

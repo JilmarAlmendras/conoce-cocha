@@ -14,7 +14,7 @@ import { Colors } from "@/constants/Colors";
 
 const cliza = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/anH6nxHHKdxGKQn47");
+    Linking.openURL("https://maps.app.goo.gl/aD6iHG152GuysvRb9");
   };
 
   const router = useRouter();
@@ -65,16 +65,11 @@ const cliza = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Image
             source={{
-              uri: "https://www.rumbosdelperu.com/wp-content/uploads/2019/05/TarataLodge-.jpg",
-            }}
-            style={styles.mainImage}
-          />
-          <Image
-            source={{
               uri: "https://live.staticflickr.com/4364/36519690014_f82ed0ed90_b.jpg",
             }}
             style={styles.mainImage}
           />
+
           <Text style={styles.description}>
             Este pintoresco pueblo es famoso por su gastronomía, especialmente
             el chicharrón, y su vibrante mercado. El pueblo es sede de varias
@@ -116,7 +111,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 20,
-    paddingTop: 100,
+    paddingTop: 150,
   },
   mainImage: {
     width: "100%",

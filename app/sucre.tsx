@@ -63,7 +63,7 @@ const sucre = () => {
         <Text style={styles.title}>Plaza Sucre</Text>
         <Image
           source={{
-            uri: "https://guia.lostiemposvideos.com/wp-content/uploads/2022/12/15_me_2_andiaaaaa-min-1.jpg",
+            uri: "https://as1.ftcdn.net/v2/jpg/01/39/86/14/500_F_139861443_pa9rdjEFfnh0CwqNJHftr6ZUsA8bdC2J.jpg",
           }}
           style={styles.mainImage}
         />
@@ -74,7 +74,7 @@ const sucre = () => {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

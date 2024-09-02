@@ -63,18 +63,21 @@ const angostura = () => {
         <Text style={styles.title}>Parque Ecológico de la Angostura</Text>
         <Image
           source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/3/33/Laguna_Angostura_near_Cochabamba%2C_Bolivia.jpg",
+            uri: "https://www.lostiempos.com/sites/default/files/styles/noticia_detalle/public/media_imagen/2023/2/6/11_me_1_pedro_figueroa.jpg?itok=HfQK7wi4",
           }}
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          Un área protegida que ofrece actividades al aire libre como caminatas,
+        La laguna La Angostura es una laguna artificial en Bolivia, ubicada en los municipios de Arbieto y Tolata,
+         en las provincias de Esteban Arze y Germán Jordán respectivamente, 
+         en el departamento de Cochabamba.
+         Un área protegida que ofrece actividades al aire libre como caminatas,
           observación de aves y paseos en bote.
         </Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

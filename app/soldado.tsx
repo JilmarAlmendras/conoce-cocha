@@ -13,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 
 const soldado = () => {
   const handlePress = () => {
-    Linking.openURL("https://maps.app.goo.gl/FFFc13h8APKvhbJy6");
+    Linking.openURL("https://maps.app.goo.gl/fVw57Y3Z8HpmHhGR6");
   };
 
   const router = useRouter();
@@ -60,21 +60,24 @@ const soldado = () => {
       />
 
       <View style={styles.container}>
-        <Text style={styles.title}>Monumento al Soldado Desconocido</Text>
+        <Text style={styles.title}>Monumento a Alejo Calatayud</Text>
         <Image
           source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9LccQCzzKGo-FuUYr3QKsA3PNzqvCqcYB1g&s",
+            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alejo_Calatayud_en_el_Puente_a_Quillacollo-Cochabamba%2C_Bolivia-2.jpg/800px-Alejo_Calatayud_en_el_Puente_a_Quillacollo-Cochabamba%2C_Bolivia-2.jpg?20180930151328",
           }}
           style={styles.mainImage}
         />
         <Text style={styles.description}>
-          Este monumento rinde homenaje a los soldados no identificados que
-          lucharon por Bolivia en diversas guerras.
+        Alejo Calatayud (Villa Real de Oropesa, c. 1705 – Cochabamba, 31 de enero de 1731) 
+        fue un platero mestizo del virreinato del Perú. Hijo de Juan Calatayud y Agustina 
+        Espíndola Prado, y casado con Teresa Ramona Zambrana Villalobos, en 1730 Calatayud lideró una 
+        violenta rebelión, 
+        y se convirtió en héroe local entre las masas plebeyas de la provincia de Cochabamba.
         </Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-            <Text style={styles.goButtonText}>Ubicacion</Text>
+            <Text style={styles.goButtonText}>ubicación</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -80,7 +80,7 @@ const condor = () => {
 
             <View style={styles.buttonContainer}>
               <TouchableOpacity style={styles.goButton} onPress={handlePress}>
-                <Text style={styles.goButtonText}>Ubicacion</Text>
+                <Text style={styles.goButtonText}>ubicación</Text>
               </TouchableOpacity>
             </View>
           </View>
